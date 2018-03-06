@@ -1,0 +1,98 @@
+body {
+    background: #ebebeb;
+    color: #2C3E50;
+    border-color: #1abc9c;
+
+}
+
+
+.border-gr {
+    border-color: #1abc9c;
+}
+
+.panel > .footeeeer {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.border-ra {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(86, 86, 86, 0.71);
+}
+
+.loa > a:hover {
+    color: #1abc9c;
+}
+
+.btnn-gr {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-color: #1abc9c;
+    color: #ffffff;
+    box-shadow: 1px 1px 5px rgba(86, 86, 86, 0.71);
+}
+
+.btnn-gr:hover {
+    color: #ffffff;
+    background-color: #2c3e50;
+    text-decoration: none;
+}
+.tag button{
+    background-color: #d0dcde;
+    color: #000000;
+    /*border: 1px solid #2c3e50;*/
+    box-shadow: 1px 1px 5px rgba(86, 86, 86, 0.71);
+}
+
+.tag-cloud a {
+    border: 1px solid #1abc9c;
+    padding: 2px 7px;
+    color: #1abc9c;
+    line-height: 1.5em;
+    display: inline-block;
+    margin: 0 7px 7px 0;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.tag-cloud a:hover {
+    color: #ffffff;
+    background: #1abc9c;
+    text-decoration: none;
+}
+
+.time-cloud a {
+    border: 1px solid #2C3E50;
+    padding: 5px 80px;
+    color: #2C3E50;
+    line-height: 1.5em;
+    display: inline-block;
+    margin: 0 0 10px 50px;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+
+}
+
+.time-cloud a:hover {
+    color: #ffffff;
+    background: #2C3E50;
+    text-decoration: none;
+}
+
+.meta-span span {
+    color: #959595;
+    margin: 14px 0 0 0;
+}
+
+p {
+    font-size: 18px;
+}
+

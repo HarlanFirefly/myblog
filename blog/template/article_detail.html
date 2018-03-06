@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <article class="panel border-ra">
+        <div class="text-center panel-heading border-gr">
+            <h1>{{ article.title }}</h1>
+            <div class="meta-span">
+				<span>作者：{{ article.author }}
+				</span>
+                <span>&emsp;
+				</span>
+                <span class="meta-span">
+					日期：{{ article.created_time.date|date:"Y-m-d" }}
+				</span>
+                <span>&emsp;
+				</span>
+                <span class="views-count">阅读:{{ article.views }}</span>
+            </div>
+        </div>
+        <div class="panel-body ">&nbsp;&nbsp;&nbsp;&nbsp;{{ article.body|safe }}</div>
+
+        <div class=" border-gr footeeeer meta-span ">
+            <div align="left" style="float:left">
+                <a class="btn btn-sm btnn-gr " href="{% url 'index' %}">返回首页</a>
+            </div>
+            <div align="right">
+                {% for tag in article.tags.all %}
+                    <button class="btn btn-sm  tag-cloud">{{ tag }}</button>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% for comment in comment_list %}
+        <div class="panel border-ra">
+            <div class="text-center panel-heading border-gr">
+                <div align="left"><h3>{{ comment.name }}</h3></div>
+                <div align="right">{{ comment.created_time }}</div>
+            </div>
+
+            <div class="panel-body">
+                <p>{{ comment.text }}</p>
+
+            </div>
+
+        </div>
+    {% empty %}
+        <div class="panel border-ra">
+            <div class="text-center panel-heading">
+                暂无评论!
+            </div>
+        </div>
+    {% endfor %}
+    <form  method="post" class="comment-form">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-4">
+                <label for="{{ form.name.id_for_label }}">名字：</label>
+                {{ form.name }}
+                {{ form.name.errors }}
+            </div>
+            <div class="col-md-12">
+                <label for="{{ form.text.id_for_label }}">评论：</label>
+                {{ form.text }}
+                {{ form.text.errors }}
+                <button type="submit" class="comment-btn">发表</button>
+            </div>
+        </div>    <!-- row -->
+    </form>
+{% endblock main %}
+
+{% block sider %}
+    
+{% endblock %}
