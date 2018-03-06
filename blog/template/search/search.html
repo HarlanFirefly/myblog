@@ -8,28 +8,32 @@
             <div class="panel border-ra">
                 <div class="text-center panel-heading border-gr">
                     <h1>
-                        <a href="{{ result.object.get_absolute_url }}">{% highlight result.object.title with query %}</a>
+                        {% highlight result.object.title with query %}
                     </h1>
-                    <div class="entry-meta">
-                    <span class="post-category">
-                        <a href="#">
-                            {{ result.object.tags.name }}</a></span>
-                        <span class="post-date"><a href="#">
-                            <time class="entry-date" datetime="{{ result.object.created_time }}">
-                                {{ result.object.created_time }}</time></a></span>
-                        <span class="post-author"><a href="#">{{ result.object.author }}</a></span>
+                    <div class="meta-span">
+                        <span>
+                            作者：{{ result.object.author }}
+                        </span><span>&emsp;</span>
+                        <span class="meta-span">
+                                    日期：{{ result.object.created_time.date|date:"Y-m-d" }}
+                                </span>
+                        <span>&emsp;</span>
                         <span class="comments-link">
-                        <a href="{{ result.object.get_absolute_url }}#comment-area">
-                            {{ result.object.comment_set.count }} 评论</a></span>
-                        <span class="views-count"><a
-                                href="{{ result.object.get_absolute_url }}">{{ result.object.views }} 阅读</a></span>
+                                评论:{{ result.object.comment_set.count }} </span>
+                        <span class="views-count">阅读:{{ result.object.views }} </span>
                     </div>
                 </div>
-                <div class="entry-content clearfix">
-                    <p>{% highlight result.object.body with query %}</p>
-                    <div class="read-more cl-effect-14">
-                        <a href="{{ result.object.get_absolute_url }}" class="more-link">继续阅读 <span
-                                class="meta-nav">→</span></a>
+                <div class="panel-body">
+                <p>{% highlight result.object.body with query %}</p>
+            </div>
+                <div class="border-gr footeeeer meta-span">
+                    <div align="left" style="float:left">
+                        <a class="btn  btnn-gr " href="{{ result.object.get_absolute_url }}">阅读更多</a>
+                    </div>
+                    <div align="right" class="tag">
+                        {% for tag in result.object.tags.all %}
+                            <a class="btn btn-default btn-sm " href="{% url 'tag' tag.name %}">{{ tag }}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
