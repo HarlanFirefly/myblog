@@ -6,7 +6,7 @@ idna==2.6
 jieba==0.39
 Markdown==2.6.11
 Pillow==5.0.0
-Pygments==2.2.0
+Pygments==2.7.4
 pytz==2018.3
 requests==2.18.4
 six==1.11.0
